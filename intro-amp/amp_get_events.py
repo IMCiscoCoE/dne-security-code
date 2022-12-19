@@ -83,9 +83,6 @@ if __name__ == "__main__":
     # create a newfile "events.json" 
     events_path = repository_root / "events.json"
     # TODO: Store the events observed in a file. 
-    # Hint: 1 set up path (uncomment next line)
-    # events_path = repository_root / "events.json"
-
     print(green(f"\n==> Saving events to: {events_path}"))
     #TODO: Hint: 2 you can all the write_events_to_file function
 
