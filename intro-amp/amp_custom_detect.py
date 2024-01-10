@@ -71,7 +71,7 @@ def get_amp_detections(
 def parseResponse(file_lists):
     print(file_lists)
     for item in file_lists["data"]:
-        if item["name"] == "File Blacklist":
+        if item["name"] == "Simple Custom Detection List":
             list_id = item["guid"]
     return list_id
     
@@ -81,7 +81,7 @@ def post_to_amp(
     host=env_lab.AMP.get("host"),
     client_id=env_user.AMP_CLIENT_ID,
     api_key=env_user.AMP_API_KEY):
-    print("\n==> Adding  SHA to AMP custom detections list")
+    print("\n==> Adding SHA to AMP custom detections list")
 
     url = f"https://{client_id}:{api_key}@{host}/v1/file_lists/{list_id}/files/{SAMPLE_SHA256}"
 
