@@ -49,7 +49,12 @@ from fdm_auth import fdm_login  # noqa
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
-def fdm_get_networks(access_token, host=FDM.get("host"), port=FDM.get("port"),  api_version=FDM.get("api_version"),):
+def fdm_get_networks(
+    access_token,
+    host=FDM.get("host"),
+    port=FDM.get("port"),
+    api_version=FDM.get("api_version"),
+):
     """Get the list of all Networks in FDM."""
     print(blue("\n==> Getting a list of all Networks in FDM"))
 
@@ -60,7 +65,7 @@ def fdm_get_networks(access_token, host=FDM.get("host"), port=FDM.get("port"),  
     }
 
     response = requests.get(
-        f"https://{host}:{port}/api/fdm/v{api_version}/object/networks",
+        f"https://{host}:{port}/api/fdm/{api_version}/object/networks",
         headers=headers,
         verify=False,
     )
@@ -76,7 +81,7 @@ if __name__ == "__main__":
     networks = fdm_get_networks(token)
 
     print(
-        white('Network(s):', bold=True),
+        white("Network(s):", bold=True),
         pformat(networks),
         sep="\n",
     )
