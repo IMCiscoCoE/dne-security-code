@@ -75,7 +75,7 @@ def fdm_login(
     }
 
     response = requests.post(
-        f"https://{host}:{port}/api/fdm/v{api_version}/fdm/token",
+        f"https://{host}:{port}/api/fdm/{api_version}/fdm/token",
         headers=headers,
         json=payload,
         verify=False,
@@ -97,7 +97,7 @@ def fdm_login(
     print(
         green("Login was successful!"),
         f"Access Token: {access_token}",
-        sep="\n"
+        sep="\n",
     )
 
     return access_token
