@@ -51,7 +51,7 @@ NETWORK_OBJECT = {
     "description": "DevNet Security",
     "subType": "HOST",
     "value": "5.5.5.5",
-    "type": "networkobject"
+    "type": "networkobject",
 }
 
 
@@ -78,7 +78,7 @@ def fdm_create_network(
     payload = network_object
 
     response = requests.post(
-        f"https://{host}:{port}/api/fdm/v{api_version}/object/networks",
+        f"https://{host}:{port}/api/fdm/{api_version}/object/networks",
         headers=headers,
         json=payload,
         verify=False,
@@ -97,5 +97,5 @@ if __name__ == "__main__":
     print(
         white("Network Details:", bold=True),
         pformat(new_network_details),
-        sep="\n"
+        sep="\n",
     )
