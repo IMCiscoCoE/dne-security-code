@@ -58,9 +58,9 @@ def get_ise_anc_policies(
     print(blue("\n==> Getting ISE ANC policies"))
 
     headers = {
-        'Content-Type': "application/json",
-        'Accept': "application/json"
-        }
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
 
     authentication = HTTPBasicAuth(username, password)
 
@@ -88,9 +88,9 @@ def get_ise_anc_policy_details(
     print(blue(f"\n==> Getting the details for the `{policy_id}` ANC policy"))
 
     headers = {
-        'Content-Type': "application/json",
-        'Accept': "application/json"
-        }
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
 
     authentication = HTTPBasicAuth(username, password)
 
@@ -109,19 +109,19 @@ def get_ise_anc_policy_details(
 
 # If this script is the "main" script, run...
 if __name__ == "__main__":
-    #TODO : Call the fucntion to get ISE ANC policies assign the value returned by function to "policies" variable
+    # TODO : Call the function to get ISE ANC policies assign the value returned by function to "policies" variable
     policies = MISSION
     print(
         white("\nAdaptive Network Control (ANC) Policies:", bold=True),
         pformat(policies),
-        sep="\n"
+        sep="\n",
     )
-    #TODO: Use the policy/polices you have received from ISE to get the details on the policy.
+    # TODO: Use the policy/polices you have received from ISE to get the details on the policy.
     devnet_anc_policy = MISSION
-    
-    #TODO: Print the policy details you have received from ISE 
+
+    # TODO: Print the policy details you have received from ISE
     print(
         white("\nANC_Devnet Adaptive Network Control Policy:", bold=True),
         pformat(MISSION),
-        sep="\n"
+        sep="\n",
     )
