@@ -43,8 +43,11 @@ sys.path.insert(0, str(repository_root))
 
 from env_lab import THREATGRID  # noqa
 from env_user import THREATGRID_API_KEY  # noqa
+
 api_key = THREATGRID_API_KEY
 
-url = 'https://panacea.threatgrid.com/api/v2/iocs/feeds/domains?after=2018-07-18T21:39:13Z&before=2019-07-18T22:39:13Z&domain=lamp.troublerifle.bid&api_key={}'.format(api_key)
+url = "https://panacea.threatgrid.eu/api/v2/iocs/feeds/domains?after=2022-10-07T00:00:00Z&before=2023-01-08T00:00:00Z&domain=oslobikerental.no.ww18.online4u.no&api_key={}".format(
+    api_key
+)
 r = requests.get(url)
-pprint (r.json())
+pprint(r.json())
