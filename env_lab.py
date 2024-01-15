@@ -35,7 +35,7 @@ from inspect import currentframe
 #     sandbox - Cisco DevNet Always-On / Reserved Sandboxes
 #     express - Cisco DevNet Express Lab Backend
 #     custom  - Your Own "Custom" Lab Backend
-ENVIRONMENT_IN_USE = "express"
+ENVIRONMENT_IN_USE = "custom"
 
 # End User Input
 
@@ -64,7 +64,7 @@ elif ENVIRONMENT_IN_USE == "express":
         "port": 443,
         "username": "admin",
         "password": "C1sco12345",
-        "api_version" : 3,
+        "api_version": "v3",
     }
 
     # ISE in the DevNet Express Security dCloud Pod
@@ -82,36 +82,65 @@ elif ENVIRONMENT_IN_USE == "express":
     # ThreatGrid Cloud
     THREATGRID = {"host": "panacea.threatgrid.com"}
 
-    UMBRELLA = {"en_url": "https://s-platform.api.opendns.com/1.0/events",
-                "inv_url": "https://investigate.api.umbrella.com", }
+    UMBRELLA = {
+        "en_url": "https://s-platform.api.opendns.com/1.0/events",
+        "inv_url": "https://investigate.api.umbrella.com",
+    }
 
 
 elif ENVIRONMENT_IN_USE == "custom":
     # Your FMC
-    FMC = {"host": "", "port": 443, "username": "", "password": ""}
+    FMC = {
+        "host": "198.18.133.10",
+        "port": 443,
+        "username": "admin",
+        "password": "C1sco12345",
+    }
 
     # Your FDM
-    FDM = {"host": "", "port": 443, "username": "", "password": ""}
+    FDM = {
+        "host": "10.10.20.65",
+        "port": 443,
+        "username": "admin",
+        "password": "Sbxftd1234!",
+        "api_version": "latest",
+    }
 
     # Your ISE
-    ISE = {"host": "", "port": 9060, "username": "", "password": ""}
+    ISE = {
+        "host": "10.10.20.77",
+        "port": 443,
+        "username": "admin",
+        "password": "QAWSedrf1234!",
+    }
 
     # Your AMP
-    AMP = {"host": ""}
+    AMP = {"host": "api.amp.cisco.com"}
 
     # Your ThreatGrid
-    THREATGRID = {"host": ""}
+    THREATGRID = {"host": "panacea.threatgrid.eu"}
 
-        
+
 """Helper functions for the missions"""
 
 
-def print_missing_mission_warn(lineerror) :
-    print(blue(f"\nPlease replace this fucntion (print_missing_mission_warn(...)) with correct required mission statements!\n"))
-    print(green(f"At hosted DNE Event; Please ask for help from procter or your neighbour attendee; if you are not making progress...\n"))
-    print(red(f"Check and complete the #TODO at Line number --->  {lineerror}"))
+def print_missing_mission_warn(lineerror):
+    print(
+        blue(
+            f"\nPlease replace this function (print_missing_mission_warn(...)) with correct required mission statements!\n"
+        )
+    )
+    print(
+        green(
+            f"At hosted DNE Event; Please ask for help from proctor or your neighbour attendee; if you are not making progress...\n"
+        )
+    )
+    print(
+        red(f"Check and complete the #TODO at Line number --->  {lineerror}")
+    )
     return exit()
 
+
 def get_line():
-    currentfram=currentframe()
+    currentfram = currentframe()
     return currentfram.f_back.f_lineno
