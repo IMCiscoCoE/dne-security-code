@@ -120,6 +120,11 @@ elif ENVIRONMENT_IN_USE == "custom":
     # Your ThreatGrid
     THREATGRID = {"host": "panacea.threatgrid.eu"}
 
+    UMBRELLA = {
+        "en_url": "https://s-platform.api.opendns.com/1.0/events",
+        "inv_url": "https://investigate.api.umbrella.com",
+    }
+
 
 """Helper functions for the missions"""
 
