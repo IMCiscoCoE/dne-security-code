@@ -8,6 +8,9 @@ intro-threatgrid/*.json
 mission-data/
 !mission-data/README.md
 
+# Lab Solutions
+solutions/
+
 # Virtual Environments
 .venv
 venv/
